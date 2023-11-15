@@ -1,0 +1,224 @@
+[debug] [2023-11-15T08:27:33.699Z] ----------------------------------------------------------------------
+[debug] [2023-11-15T08:27:33.700Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2023-11-15T08:27:33.700Z] CLI Version:   12.8.1
+[debug] [2023-11-15T08:27:33.701Z] Platform:      darwin
+[debug] [2023-11-15T08:27:33.701Z] Node Version:  v18.12.1
+[debug] [2023-11-15T08:27:33.705Z] Time:          Wed Nov 15 2023 09:27:33 GMT+0100 (Central European Standard Time)
+[debug] [2023-11-15T08:27:33.705Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-15T08:27:33.735Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-15T08:27:33.736Z] > authorizing via signed-in user (blancamarfil94@gmail.com)
+[debug] [2023-11-15T08:27:33.736Z] [iam] checking project authors-manager for permissions ["firebase.projects.get"]
+[debug] [2023-11-15T08:27:33.737Z] > refreshing access token with scopes: []
+[debug] [2023-11-15T08:27:33.738Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-11-15T08:27:33.738Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-11-15T08:27:33.929Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-11-15T08:27:33.929Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-11-15T08:27:33.953Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/authors-manager:testIamPermissions [none]
+[debug] [2023-11-15T08:27:33.953Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/authors-manager:testIamPermissions x-goog-quota-user=projects/authors-manager
+[debug] [2023-11-15T08:27:33.953Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/authors-manager:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-11-15T08:27:34.731Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/authors-manager:testIamPermissions 200
+[debug] [2023-11-15T08:27:34.731Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/authors-manager:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-11-15T08:27:34.732Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/authors-manager [none]
+[debug] [2023-11-15T08:27:35.036Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/authors-manager 200
+[debug] [2023-11-15T08:27:35.037Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/authors-manager {"projectId":"authors-manager","projectNumber":"324822733413","displayName":"authors-manager","name":"projects/authors-manager","resources":{"hostingSite":"authors-manager"},"state":"ACTIVE","etag":"1_d9b06bcb-6d9b-4af0-8169-cb1774c62042"}
+[info] 
+[info] === Serving from '/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager'...
+[info] 
+[debug] [2023-11-15T08:27:35.041Z] defaultcredentials: writing to file /Users/blanca/.config/firebase/blancamarfil94_gmail_com_application_default_credentials.json
+[debug] [2023-11-15T08:27:35.044Z] Setting GAC to /Users/blanca/.config/firebase/blancamarfil94_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/blanca/.config/firebase/blancamarfil94_gmail_com_application_default_credentials.json"}}
+[debug] [2023-11-15T08:27:35.045Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/authors-manager/adminSdkConfig [none]
+[debug] [2023-11-15T08:27:35.288Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/authors-manager/adminSdkConfig 200
+[debug] [2023-11-15T08:27:35.289Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/authors-manager/adminSdkConfig {"projectId":"authors-manager","storageBucket":"authors-manager.appspot.com"}
+[info] i  functions: Watching "/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/\" for Cloud Functions..."}}
+[debug] [2023-11-15T08:27:35.326Z] Validating nodejs source
+[debug] [2023-11-15T08:27:36.712Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/src/index.js",
+  "dependencies": {
+    "apollo-server-express": "^3.13.0",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "graphql": "^16.8.1"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.5.0",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2023-11-15T08:27:36.712Z] Building nodejs source
+[debug] [2023-11-15T08:27:36.713Z] Failed to find version of module node: reached end of search path /Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2023-11-15T08:27:36.715Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-11-15T08:27:36.721Z] Found firebase-functions binary at '/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8695
+
+[debug] [2023-11-15T08:27:37.359Z] Got response from /__/functions.yaml {"endpoints":{"graphql":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"region":["europe-west1"],"httpsTrigger":{},"entryPoint":"graphql"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: graphql. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: graphql."}}
+[info] ✔  functions[europe-west1-graphql]: http function initialized (http://localhost:5000/authors-manager/europe-west1/graphql). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5000/authors-manager/europe-west1/graphql)."}}
+[debug] [2023-11-15T09:04:26.046Z] File /Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/graphql/schema/cats.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/graphql/schema/cats.ts changed, reloading triggers"}}
+[debug] [2023-11-15T09:04:26.826Z] File /Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/graphql/schema/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/graphql/schema/index.ts changed, reloading triggers"}}
+[debug] [2023-11-15T09:04:27.913Z] Validating nodejs source
+[debug] [2023-11-15T09:04:30.158Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/src/index.js",
+  "dependencies": {
+    "apollo-server-express": "^3.13.0",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "graphql": "^16.8.1"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.5.0",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2023-11-15T09:04:30.166Z] Building nodejs source
+[debug] [2023-11-15T09:04:30.168Z] Failed to find version of module node: reached end of search path /Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2023-11-15T09:04:30.250Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-11-15T09:04:30.320Z] Found firebase-functions binary at '/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8204
+
+[debug] [2023-11-15T09:04:31.269Z] Got response from /__/functions.yaml {"endpoints":{"graphql":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"region":["europe-west1"],"httpsTrigger":{},"entryPoint":"graphql"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: graphql. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: graphql."}}
+[debug] [2023-11-15T09:13:43.041Z] File /Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/graphql/schema/cats.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/graphql/schema/cats.ts changed, reloading triggers"}}
+[debug] [2023-11-15T09:13:44.306Z] Validating nodejs source
+[debug] [2023-11-15T09:13:46.243Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/src/index.js",
+  "dependencies": {
+    "apollo-server-express": "^3.13.0",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "graphql": "^16.8.1"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.5.0",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2023-11-15T09:13:46.246Z] Building nodejs source
+[debug] [2023-11-15T09:13:46.246Z] Failed to find version of module node: reached end of search path /Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2023-11-15T09:13:46.265Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-11-15T09:13:46.283Z] Found firebase-functions binary at '/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8050
+
+[debug] [2023-11-15T09:13:46.925Z] Got response from /__/functions.yaml {"endpoints":{"graphql":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"region":["europe-west1"],"httpsTrigger":{},"entryPoint":"graphql"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: graphql. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: graphql."}}
+[debug] [2023-11-15T09:13:54.466Z] File /Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/graphql/schema/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/graphql/schema/index.ts changed, reloading triggers"}}
+[debug] [2023-11-15T09:13:54.816Z] File /Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/graphql/schema/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/graphql/schema/index.ts changed, reloading triggers"}}
+[debug] [2023-11-15T09:13:55.821Z] Validating nodejs source
+[debug] [2023-11-15T09:13:56.258Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/src/index.js",
+  "dependencies": {
+    "apollo-server-express": "^3.13.0",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "graphql": "^16.8.1"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.5.0",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2023-11-15T09:13:56.258Z] Building nodejs source
+[debug] [2023-11-15T09:13:56.258Z] Failed to find version of module node: reached end of search path /Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2023-11-15T09:13:56.262Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-11-15T09:13:56.263Z] Found firebase-functions binary at '/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8628
+
+[debug] [2023-11-15T09:13:57.275Z] Got response from /__/functions.yaml {"endpoints":{"graphql":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"region":["europe-west1"],"httpsTrigger":{},"entryPoint":"graphql"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: graphql. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: graphql."}}
+[debug] [2023-11-15T09:28:24.141Z] [work-queue] {"queuedWork":["/authors-manager/europe-west1/graphql-2023-11-15T09:28:24.129Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2023-11-15T09:28:24.166Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/authors-manager/europe-west1/graphql-2023-11-15T09:28:24.129Z"],"workRunningCount":1}
+[debug] [2023-11-15T09:28:24.173Z] Accepted request POST /authors-manager/europe-west1/graphql --> europe-west1-graphql
+[debug] [2023-11-15T09:28:24.186Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-11-15T09:28:24.190Z] [functions] Got req.url=/authors-manager/europe-west1/graphql, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/authors-manager/europe-west1/graphql, mapping to path=/"}}
+[debug] [2023-11-15T09:28:24.241Z] [worker-pool] addWorker(europe-west1-graphql) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(europe-west1-graphql)"}}
+[debug] [2023-11-15T09:28:24.251Z] [worker-pool] Adding worker with key europe-west1-graphql, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key europe-west1-graphql, total=1"}}
+[debug] [2023-11-15T09:28:24.981Z] [runtime-status] [65029] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.11.0","resolution":"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"[runtime-status] [65029] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.11.0\",\"resolution\":\"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2023-11-15T09:28:24.982Z] [runtime-status] [65029] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.5.0","resolution":"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"[runtime-status] [65029] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.5.0\",\"resolution\":\"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-11-15T09:28:24.982Z] [runtime-status] [65029] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"[runtime-status] [65029] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2023-11-15T09:28:24.982Z] [runtime-status] [65029] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.5.0","resolution":"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"[runtime-status] [65029] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.5.0\",\"resolution\":\"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-11-15T09:28:25.203Z] [runtime-status] [65029] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"[runtime-status] [65029] Checked functions.config() {\"config\":{}}"}}
+[debug] [2023-11-15T09:28:25.203Z] [runtime-status] [65029] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.5.0","resolution":"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/firebase-functions/lib/v1/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"[runtime-status] [65029] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.5.0\",\"resolution\":\"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/firebase-functions/lib/v1/index.js\"}}"}}
+[debug] [2023-11-15T09:28:25.204Z] [runtime-status] [65029] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.5.0","resolution":"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"[runtime-status] [65029] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.5.0\",\"resolution\":\"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-11-15T09:28:25.205Z] [runtime-status] [65029] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.11.0","resolution":"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"[runtime-status] [65029] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.11.0\",\"resolution\":\"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2023-11-15T09:28:25.206Z] [runtime-status] [65029] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.5.0","resolution":"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"[runtime-status] [65029] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.5.0\",\"resolution\":\"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-11-15T09:28:25.206Z] [runtime-status] [65029] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"11.11.0","resolution":"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"[runtime-status] [65029] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"11.11.0\",\"resolution\":\"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2023-11-15T09:28:25.481Z] [runtime-status] [65029] Functions runtime initialized. {"cwd":"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions","node_version":"18.12.1"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"[runtime-status] [65029] Functions runtime initialized. {\"cwd\":\"/Users/blanca/Documents/Coding/React/OwnProjects/authors-manager/authors-manager/functions\",\"node_version\":\"18.12.1\"}"}}
+[debug] [2023-11-15T09:28:25.481Z] [runtime-status] [65029] Listening to port: /var/folders/gf/y70931v12hnbgvp2hz1sm_s80000gn/T/fire_emu_b3eb57e7cb371264.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"[runtime-status] [65029] Listening to port: /var/folders/gf/y70931v12hnbgvp2hz1sm_s80000gn/T/fire_emu_b3eb57e7cb371264.sock"}}
+[debug] [2023-11-15T09:28:25.487Z] [worker-europe-west1-graphql-18f805dd-9b1e-4156-8e61-8d4262966a10]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"[worker-europe-west1-graphql-18f805dd-9b1e-4156-8e61-8d4262966a10]: IDLE"}}
+[debug] [2023-11-15T09:28:25.487Z] [worker-pool] submitRequest(triggerId=europe-west1-graphql) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=europe-west1-graphql)"}}
+[info] i  functions: Beginning execution of "europe-west1-graphql" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"Beginning execution of \"europe-west1-graphql\""}}
+[debug] [2023-11-15T09:28:25.491Z] [worker-europe-west1-graphql-18f805dd-9b1e-4156-8e61-8d4262966a10]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"[worker-europe-west1-graphql-18f805dd-9b1e-4156-8e61-8d4262966a10]: BUSY"}}
+[debug] [2023-11-15T09:28:25.508Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "europe-west1-graphql" in 16.937625ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"Finished \"europe-west1-graphql\" in 16.937625ms"}}
+[debug] [2023-11-15T09:28:25.508Z] [worker-europe-west1-graphql-18f805dd-9b1e-4156-8e61-8d4262966a10]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"[worker-europe-west1-graphql-18f805dd-9b1e-4156-8e61-8d4262966a10]: IDLE"}}
+[debug] [2023-11-15T09:28:25.508Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2023-11-15T09:28:25.509Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"europe-west1-graphql"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2023-11-15T09:28:25.509Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
